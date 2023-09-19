@@ -6,6 +6,7 @@ namespace GumNet\DoubleCheckPrice\Test\Unit\Ui\Component\Listing\Column;
 
 use GumNet\DoubleCheckPrice\Model\EmailSender;
 use GumNet\DoubleCheckPrice\Ui\Component\Listing\Column\ProductPriceApprovalActions;
+use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -22,7 +23,7 @@ class ProductPriceApprovalActionsTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->urlBuilder = $this->createMock(\Magento\Framework\UrlInterface::class);
+        $this->urlBuilder = $this->createMock(UrlInterface::class);
         $this->context = $this->createMock(ContextInterface::class);
         $this->uiComponentFactory = $this->createMock(UiComponentFactory::class);
 

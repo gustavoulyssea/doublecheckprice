@@ -14,6 +14,8 @@ class Index extends Action implements HttpGetActionInterface
 {
     public const ADMIN_RESOURCE = 'GumNet_DoubleCheckPrice::product_price_approval';
 
+    public const PAGE_TITLE = 'Product Price Approval';
+
     /**
      * Constructor
      *
@@ -34,7 +36,7 @@ class Index extends Action implements HttpGetActionInterface
     public function execute(): ResultInterface
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend(__("Product Price Approval"));
+        $resultPage->getConfig()->getTitle()->prepend(__(self::PAGE_TITLE));
         return $resultPage;
     }
 }

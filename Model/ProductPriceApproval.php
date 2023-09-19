@@ -46,10 +46,15 @@ class ProductPriceApproval extends AbstractModel implements IdentityInterface
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
         $this->_init(ResourceModel\ProductPriceApproval::class);
     }
+
+    /**
+     * @return array
+     */
     public function getIdentities(): array
     {
         return [self::CACHE_TAG . '_' . $this->getId()];
     }
+
     /**
      * Return the Data Model
      *

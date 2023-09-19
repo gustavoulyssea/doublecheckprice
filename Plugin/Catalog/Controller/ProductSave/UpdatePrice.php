@@ -13,6 +13,7 @@ use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Catalog\Controller\Adminhtml\Product\Save;
 use Magento\Framework\App\RequestInterface;
+use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Message\Manager;
 
@@ -73,6 +74,14 @@ class UpdatePrice
         $this->request->setPostValue(self::PARAM_PRODUCT, $productParam);
     }
 
+    /**
+     * Create price approval entry
+     *
+     * @param ProductInterface $product
+     * @param float $newPrice
+     * @return ProductPriceApprovalInterface
+     * @throws LocalizedException
+     */
     private function createPriceApproval(
         ProductInterface $product,
         float $newPrice
