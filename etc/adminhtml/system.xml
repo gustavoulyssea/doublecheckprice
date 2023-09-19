@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="catalog">
+            <group id="price_approval" translate="label" type="text" sortOrder="340" showInDefault="1" showInWebsite="1">
+                <label>Price Approval</label>
+                <field id="email_enable" translate="label" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="1">
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <label>Enable email notification</label>
+                </field>
+                <field id="email_to" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1">
+                    <label>Email to addresses</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="email_enable">1</field>
+                    </depends>
+                    <comment>Email addresses separated by comma</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

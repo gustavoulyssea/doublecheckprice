@@ -1,0 +1,15 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="product_price_approval" resource="default" engine="innodb" comment="Product price approval">
+        <column xsi:type="int" name="entity_id" padding="7" unsigned="true" nullable="false" identity="true" comment="ID" />
+        <column xsi:type="varchar" name="username" nullable="false" length="255" comment="Admin user name" />
+        <column xsi:type="varchar" name="sku" nullable="false" length="255" comment="Product SKU" />
+        <column xsi:type="varchar" name="attribute" nullable="false" length="255" comment="Attribute code" default="price" />
+        <column xsi:type="datetime" name="created_at" nullable="false" length="255" default="CURRENT_TIMESTAMP" comment="Created at" />
+        <column xsi:type="float" name="old_price" nullable="false" comment="Old price"  />
+        <column xsi:type="float" name="new_price" nullable="false" comment="New price" />
+        <column xsi:type="int" name="status" nullable="false" padding="7" comment="Status" default="0" />
+      <constraint xsi:type="primary" referenceId="PRIMARY">
+         <column name="entity_id" />
+      </constraint>
+   </table>
+</schema>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Product_Price_Approval::home" title="Product Price Approval"
+             module="GumNet_DoubleCheckPrice" sortOrder="100"
+             parent="Magento_Catalog::catalog_products"
+             resource="GumNet_DoubleCheckPrice::product_price_configuration" action="product_price_approval/index/index"/>
+    </menu>
+</config>
